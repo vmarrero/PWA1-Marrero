@@ -50,16 +50,22 @@
 			// reports to the console the player's name and their health after a round.
             console.log(playerOneName+": "+playerOneHealth + " " + playerTwoName+":"+playerTwoHealth);
 
-            //check for victor
+//checks for the victor of the fight by running the winnerCheck() function at the end of each round and stores the value that was output by the function into a variable
             var result = winnerCheck();
+			//reports to the console the results of the round in the fight or the fight itself depending on the value of the variable.
             console.log(result);
+			//if the result of the round is that neither player won -
             if (result==="no winner")
             {
+				//the round is incremented by 1.
                 round++;
+				//the user is alerted of both players' healths at the end of the round 
                 alert(playerOneName+":"+playerOneHealth+"  *ROUND "+round+" OVER"+"*  "+playerTwoName+":"+playerTwoHealth);
-
+			//otherwise if there is a result other than "no winner" -  
             } else{
+				//alert the user of the result of the round or fight
                 alert(result);
+				//break out of the function if the fight is over before 10 rounds are reached
                 break;
             };
 
