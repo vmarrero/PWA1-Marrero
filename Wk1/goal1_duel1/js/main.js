@@ -39,13 +39,15 @@
             var minDamage1 = player1Damage * .5;
             var minDamage2 = player2Damage * .5;
 			
+            // this calculates the damage a player will deal in a round: random damage formula = Math.floor(Math.random() * (max - min) + min) || random damage formula === "Round number to the nearest integer"("Generate a random number between 0 and 1" times (max damage that can be dealt - minimum damage that can be dealt) plus 10)
             var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);
             var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);
 
-            //inflict damage
+            //subtracts the damage value dealt in the round from each player and stores the new values for each player's health; I believe this should be playerOneHealth-=f2 and playerTwoHealth-=f1 because technically as it's written now, each player is dealing damage to themselves.
             playerOneHealth-=f1;
             playerTwoHealth-=f2;
-
+			
+			// reports to the console the player's name and their health after a round.
             console.log(playerOneName+": "+playerOneHealth + " " + playerTwoName+":"+playerTwoHealth);
 
             //check for victor
