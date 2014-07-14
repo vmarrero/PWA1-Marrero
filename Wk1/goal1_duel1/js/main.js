@@ -72,21 +72,27 @@
           };
     };
 
+//function that checks for the winner of the fight depending on the player's health.
     function winnerCheck(){
+		//result is defaulted to "no winner"
         var result="no winner";
+		//if both players' healths are less than 1 or equal to 0 or less, then both players die at the end of the round.
         if (playerOneHealth<1 && playerTwoHealth<1)
         {
             result = "You Both Die";
+		//otherwise if player 1's health is less than 1 or equal to 0 or less, then player 2 is declared the winner of the fight.
         } else if(playerOneHealth<1){
             result =playerTwoName+" WINS!!!"
+		//otherwise if player 2's health is less than 1 or equal to 0 or less, then player 1 is declared the winner of the fight.
         } else if (playerTwoHealth<1)
         {
             result = playerOneName+" WINS!!!"
         };
+		//return the value of the result variable outside of the function.
        return result;
     };
 
-    /*******  The program gets started below *******/
+    /*******  The program gets started below where it is invoked *******/
     fight();
-
+//end of self-executing function
 })();
