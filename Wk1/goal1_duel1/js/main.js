@@ -1,6 +1,7 @@
 /**
- * Duel Fight Game - FINISHED
- * Date: 4/09/13
+ * Name: Vanessa Marrero
+ * Assignment: "Week #1 :: { Homework } - ANALYZE Duel #1 (4h)"
+ * Date: 7/11/2014
 
  Assignment 1
  Part 1/3 of series
