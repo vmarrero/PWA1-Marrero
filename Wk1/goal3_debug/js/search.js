@@ -1,3 +1,10 @@
+/**
+ * Name: Vanessa Marrero
+ * Assignment: "Week #1 :: { Homework } - ANALYZE Buggy Search Engine (4h)"
+ * Date: 7/11/2014
+ 
+ **/
+
 // Create privatized scope using a self-executing function
 (function(){
 	
