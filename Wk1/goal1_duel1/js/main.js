@@ -27,13 +27,18 @@
     //sets and initializes value for the 1st round
     var round=0;
 
+    //fight function which determines how much damage each player receives during a round and reduces their healths accordingly.
     function fight(){
+        //alerts to the user the name and health of player 1 and 2 at the beginning of the fight
         alert(playerOneName+":"+playerOneHealth+"  *START*  "+playerTwoName+":"+playerTwoHealth);
+        //for loop which is calculating the damage a player gives and sustains in a round - which will be a random number.
+		//the round is set to 0 and the loop will continue to run, incrementing the number of the round by 1 each time it cycles through, until there has been a winner or 10 rounds - 9 completed.
         for (var i = 0; i < 10; i++)
-        {
-            //random formula is - Math.floor(Math.random() * (max - min) + min);
+        {	
+			//the minimum damage each player will deal in a round
             var minDamage1 = player1Damage * .5;
             var minDamage2 = player2Damage * .5;
+			
             var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);
             var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);
 
