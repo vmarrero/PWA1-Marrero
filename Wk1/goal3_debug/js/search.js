@@ -69,8 +69,8 @@
 				if(compare !== -1){
 					results.push(db[i]);
 				};
-			;
-		;
+			; // 6th Syntax Error: For loop is missing ending }
+		; // 7th Syntax Error: For loop is missing ending }
 		
 		results.sort();
 		
