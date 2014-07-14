@@ -41,6 +41,7 @@
 	};
 	
 	// Finds search matches
+    // 5th Syntax Error: Function is missing the beginning {
 	var search = function(query)
 		
 		// split the user's search query string into an array
