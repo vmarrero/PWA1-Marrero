@@ -7,24 +7,24 @@
  Part 1/3 of series
 */
 
-// self-executing function
+// self-executing function for superhero fight calculator and results reporting
 (function(){
-
+	//reports "FIGHT!!!" to the console.
     console.log("FIGHT!!!");
 
-    //player name
+    //sets and initializes values for players' names
     var playerOneName = "Spiderman";
     var playerTwoName = "Batman";
 
-    //player damage
+    //sets and initializes values for the maximum damage each player causes per round
     var player1Damage = 20;
     var player2Damage = 20;
 
-    //player health
+    //sets and initializes values for players' healths
     var playerOneHealth = 100;
     var playerTwoHealth = 100;
 
-    //initiate round
+    //sets and initializes value for the 1st round
     var round=0;
 
     function fight(){
