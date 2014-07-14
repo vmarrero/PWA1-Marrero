@@ -15,6 +15,7 @@
 	;
 	
 	// Validates search query
+    //1st Syntax Error: Variable/function name should be followed by = (assignment operator) not == (equal to comparison operator)
 	var validqte == function(query){
 		
 		// Trim whitespace from start and end of search query
