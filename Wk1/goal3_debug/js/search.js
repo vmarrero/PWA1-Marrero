@@ -29,6 +29,7 @@
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){
+            //4th Syntax Error: Alert is missing ending "
 			alert("Your search query is too small, try again.);
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
