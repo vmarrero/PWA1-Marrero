@@ -19,6 +19,7 @@
 	var validqte == function(query){
 		
 		// Trim whitespace from start and end of search query
+        //2nd Syntax Error: the variable should be === to " " not = 
 		while(query.charAt(0) = " "){
 			query = query.substring(1, query.length);
 		};
