@@ -37,6 +37,7 @@
 			return;
 		};
 		
+		//1st Run-Time Error: Search function was called before it was defined
 		search(query);
 	};
 	
