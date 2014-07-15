@@ -92,11 +92,24 @@ The function accepts 2 string parameters for the first name and last name. It ta
 
     //--------------------------------------------------------
     console.log("3. word count");
-    var ipsum = "this is test text that is being used as input to a function"
+        
+    /*** 
+The function has a parameter that accepts a string of words that has been split into an array of substrings. The function determines the length of the array and returns the value.
+    ***/
 
-        //PUT FUNCTION HERE
+    var ipsum = "this is test text that is being used as input to a function";
 
-    console.log(wordCount(ipsum));
+    console.log("This is the string:", ipsum);
+   
+    var ipsum = ipsum.split(" ");
+    
+        function wordCount (words) {
+
+            ipsum = words.length;
+            return ipsum;
+        }
+    
+    console.log("Words in the string:", wordCount(ipsum));  
 
     //--------------------------------------------------------
     console.log("4. sentence char count");
