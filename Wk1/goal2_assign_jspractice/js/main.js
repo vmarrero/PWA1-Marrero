@@ -151,9 +151,37 @@ The function has a parameter that accepts a string, searches it for a match agai
     //--------------------------------------------------------
     console.log("6. find number and create an array of even or odd numbers");
 
-        //PUT FUNCTION HERE
+    /*** 
+The function has 2 parameters that accepts an array and a boolean value. First, the array is sorted in numerically ascending order. If the 2nd parameter is "false" or null (not undefined, but empty), an array is created with all the odd numbers of the array once it has been filtered using a previously established function. Otherwise, an array is created with all the even numbers of the array once it has been filtered using another previously established function. Both arrays are returned out of the function.
+    ***/
 
-    console.log(findNum([31,22,4,67,83,6,5,4]));
-    console.log(findNum([31,22,4,67,83,6,5,4], false));
+    console.log("The array of numbers is: [31,22,4,67,83,6,5,4]");
+        
+    console.log("This is the array sorted numerically and ascending:", [31,22,4,67,83,6,5,4].sort(function(a,b){return a-b}));
+    
+    function findNum(nums, type){
+
+        nums = nums.sort(function(a,b){return a-b}); 
+
+            odd = function (nums){
+                return nums % 2 !== 0; //returns false
+            };
+            
+            even = function (nums){
+                return nums % 2 === 0; //returns true
+            };
+
+            if (type === false || type === null){
+                var oddArray = nums.filter(odd);
+                return oddArray;
+            }else{
+                var evenArray = nums.filter(even);
+                return evenArray;
+            };
+    
+    };
+    
+    console.log("This is an array with all the even numbers: ", findNum([31,22,4,67,83,6,5,4]));
+    console.log("This is an array with all the odd numbers: ", findNum([31,22,4,67,83,6,5,4], false));
 
 })();
