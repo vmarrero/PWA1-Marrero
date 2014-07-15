@@ -79,7 +79,14 @@ The function goes through each array index number, takes the value of that index
     //--------------------------------------------------------
     console.log("2. concat first and last name");
 
-        //PUT FUNCTION HERE
+    /*** 
+The function accepts 2 string parameters for the first name and last name. It takes those values and concatenates them with a space in the middle and returns the final value outside of the function.
+    ***/
+
+        var fullName = function (firstName, lastName) {
+            var completeName = firstName + " " + lastName;
+            return completeName;
+        }
 
     console.log(fullName('James', 'Bond'));
 
