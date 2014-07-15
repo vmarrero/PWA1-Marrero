@@ -113,10 +113,21 @@ The function has a parameter that accepts a string of words that has been split 
 
     //--------------------------------------------------------
     console.log("4. sentence char count");
+    
+    /*** 
+The function has a parameter that accepts a string of words, determines the number of characters and returns the value.
+    ***/
 
-        //PUT FUNCTION HERE
+    var ipsum = "this is test text that is being used as input to a function";
 
-    console.log(charCount(ipsum));
+    console.log("This is the string:", ipsum);
+    
+        function charCount (words) {
+            
+            ipsum = words.length;
+            return ipsum;
+        }
+    console.log("Amount of characters in the sentence:", charCount(ipsum));
 
     //--------------------------------------------------------
     console.log("5. how many vowels in a word");
