@@ -132,9 +132,21 @@ The function has a parameter that accepts a string of words, determines the numb
     //--------------------------------------------------------
     console.log("5. how many vowels in a word");
 
-        //PUT FUNCTION HERE
+    /*** 
+The function has a parameter that accepts a string, searches it for a match against an expression (vowels) and returns each match into an array. The length of the array is then returned out of the function.
+    ***/
 
-    console.log(vowelsInWord('JavaScript'));
+    console.log("The word is: JavaScript");
+        
+    function vowelsInWord(word){
+        
+        vowels = word.match(/[a,e,i,o,u]/g);
+        vowels = vowels.length;
+        return vowels;
+
+    };
+
+    console.log("Amount of vowels in the word:", vowelsInWord('JavaScript'));
 
     //--------------------------------------------------------
     console.log("6. find number and create an array of even or odd numbers");
