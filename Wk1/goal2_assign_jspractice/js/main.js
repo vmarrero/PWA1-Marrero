@@ -53,9 +53,25 @@
     console.log('------ Goal2: Assignment: JavaScript Practice ----------');
 
     console.log("1. avg of an array of numbers");
+    
+    /*** 
+The function goes through each array index number, takes the value of that index number and adds it the sum. After which, it divides the final sum by the length of the array and returns the average outside the function.
+    ***/
+    
     var avgNumbers = function(arr){
 
-        //CODE GOES HERE
+        // Average = Sum of Numbers / Amount of Numbers
+        
+        var sum = 0;
+        
+        for(i=0; i<arr.length; i++){
+            sum += parseInt(arr[i], 10)
+        };
+   
+        
+        var avg = sum / arr.length; 
+        return avg;
+    
     };
 
     console.log('avg number = ', avgNumbers([1,2,3,4,5]));
