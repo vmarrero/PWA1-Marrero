@@ -43,5 +43,13 @@ console.log('DOM Object: ', dom);
 for (var key in dom){
     console.log('DOM Object - Key:', key, '- Value:' + dom.input);
 };
+
+//function that will run onClick
+var guess = function (){
+
+};
+
+//An .addEventListener event listener on the guess button to listen for a click event and when it happens run the function guess; the handler is executed in the bubbling phase.
+dom.button.addEventListener('click', guess, false);
     
 })();
