@@ -46,7 +46,17 @@ for (var key in dom){
 
 //function that will run onClick
 var guess = function (){
+    
+        //this function validates the user's input
+        (function validateInput (){
+        //if the number the user enters is not a number (as in a letter or nothing) or is less than 1 or is more than 10 -     
+        if(isNaN(playersGuess) || playersGuess < 1 || playersGuess > 10){
+        //the innerHTML of the output key value will display the appropriate message
+        dom.output.innerHTML = 'Put in a number between 1 and 10!';
+    };
 
+    })();
+    
 };
 
 //An .addEventListener event listener on the guess button to listen for a click event and when it happens run the function guess; the handler is executed in the bubbling phase.
