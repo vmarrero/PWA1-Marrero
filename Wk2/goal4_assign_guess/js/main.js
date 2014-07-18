@@ -47,6 +47,22 @@ for (var key in dom){
 //function that will run onClick
 var guess = function (){
     
+    //storing the user input into a variable after changing it to an integer    
+    playersGuess = parseInt(dom.input.value);
+    //testing out to make playersGuess variable is being stored correctly.
+    console.log('The Player\'s guess was: ', playersGuess);
+    
+    //depending on the user's guess, it displays the appropriate message in the HTML.
+    if (playersGuess > compNum){
+        //if the guess is higher than the random number then it displays the appropriate message in the HTML.
+        dom.output.innerHTML = 'Your guess is too high!';        }else if (playersGuess < compNum){
+        //if the guess is lower than the random number then it displays the appropriate message in the HTML.
+        dom.output.innerHTML = 'Your guess is too low!';
+    } else{
+        //if the guess is the random number then it displays the appropriate message in the HTML.
+        dom.output.innerHTML = 'Your guess is right! Congratulations!';
+    }
+    
         //this function validates the user's input
         (function validateInput (){
         //if the number the user enters is not a number (as in a letter or nothing) or is less than 1 or is more than 10 -     
