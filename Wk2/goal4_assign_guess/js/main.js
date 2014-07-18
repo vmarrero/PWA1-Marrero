@@ -31,4 +31,17 @@ getNum(1, 11);
 //this is reporting to the browser the random number
 console.log('This is the random number the Player has to guess:', compNum);
 
+//an object literal that references the DOM(html) elements.
+ var dom = {
+    input: document.querySelector("#input"),
+    output: document.querySelector("#output"),
+    button: document.querySelector("button"),
+ };
+
+//testing out to make sure the values & keys of object are accessible
+console.log('DOM Object: ', dom);
+for (var key in dom){
+    console.log('DOM Object - Key:', key, '- Value:' + dom.input);
+};
+    
 })();
