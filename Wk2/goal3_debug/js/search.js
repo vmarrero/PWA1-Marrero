@@ -154,7 +154,7 @@
 
         //run the Search function
 		search(query);
-	};
+	
 
 
     
