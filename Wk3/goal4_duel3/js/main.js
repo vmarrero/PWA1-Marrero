@@ -1,10 +1,11 @@
-/**
- * Name: Vanessa Marrero
- * Assignment: "Week #2 :: { Homework } - DEVELOP Duel #2 (75m)"
- * Date: 7/18/2014
+/********
 
- Part 2/3 of series
-*/
+ * Name: Vanessa Marrero
+ * Assignment: "Week #3 :: { Homework } - THE DUEL #3 (90m)"
+ * Date: 7/25/2014
+
+ Part 3/3 of series
+********/
 
 // self-executing function for superhero fight calculator and results reporting
 (function(){
