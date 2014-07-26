@@ -39,52 +39,61 @@
     fighter1_txt.innerHTML = "<b>" + fighters[0].name + "</b>: <span style = 'color: #558151; text-shadow: 2px 0px #ccc;'> " + fighters[0].health + "</span>";
     fighter2_txt.innerHTML = "<b>" + fighters[1].name + "</b>: <span style = 'color: #558151; text-shadow: 2px 0px #ccc;'>" + fighters[1].health + "</span>";
 
-    
     //fight function which determines how much damage each player receives during a round and reduces their healths accordingly.
-    function fight(){
-        //alerts to the user the name and health of player 1 and 2 at the beginning of the fight using array access notation.
-        alert(fighter1[0]+":"+fighter1[2]+"  *START*  "+fighter2[0]+":"+fighter2[2]);
-        //for loop which is calculating the damage a player gives and sustains in a round - which will be a random number.
-		//the round is set to 0 and the loop will continue to run, incrementing the number of the round by 1 each time it cycles through, until there has been a winner or 10 rounds - 9 completed.
-        for (var i = 0; i < 10; i++)
-        {	
-			//determines the minimum damage each player will deal in a round and stores the results
-            var minDamage1 = fighter1[1] * .5;
-            var minDamage2 = fighter2[1] * .5;
+    function fight() {
+        //the HTML to tell the user what the names and healths of both fighters are at the beginning of the fight using array access notation and dot notation to access the values of the object keys.
+        fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
+        fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
+
+        //determines the minimum damage each player will deal in a round and stores the results
+        var minDamage1 = fighters[0].damage * .5;
+        var minDamage2 = fighters[1].damage * .5;
 			
-			// this calculates the damage a player will deal in a round: random damage formula = Math.floor(Math.random() * (max - min) + min) || random damage formula === "Round number to the nearest integer"("Generate a random number between 0 and 1" times (max damage that can be dealt - minimum damage that can be dealt) plus 10)
-            var f1 = Math.floor(Math.random()*(fighter1[1]-minDamage1)+minDamage1);
-            var f2 = Math.floor(Math.random()*(fighter2[1]-minDamage2)+minDamage2);
+		// this calculates the damage a player will deal in a round: random damage formula = Math.floor(Math.random() * (max - min) + min) || random damage formula === "Round number to the nearest integer"("Generate a random number between 0 and 1" times (max damage that can be dealt - minimum damage that can be dealt) plus 10)
+        var f1 = Math.floor(Math.random() * (fighters[0].damage - minDamage1) + minDamage1);
+        var f2 = Math.floor(Math.random() * (fighters[1].damage - minDamage2) + minDamage2);
 
-            //subtracts the damage value dealt in the round from each player and stores the new values for each player's health back into the fighter's array using array access notation. This should be playerOneHealth-=f2 and playerTwoHealth-=f1 because each player is dealing damage to the other not to themselves.
-            fighter1[2]-=f2;
-            fighter2[2]-=f1;
+        //subtracts the damage value dealt in the round from each player and stores the new values for each player's health back into the objects' keys in the array. This is playerOneHealth-=f2 and playerTwoHealth-=f1 because each player is dealing damage to the other not to themselves.
+        fighters[0].health -= f2;
+        fighters[1].health -= f1;
 			
-			// reports to the console the player's name and their health after a round using array access notation.
-            console.log(fighter1[0]+": "+fighter1[2]+ " " + fighter2[0]+":"+ fighter2[2]);
+        //reports to the console the current round in the fight
+        console.log("~ Round " + round + " Results ~");
+        
+        //reports to the console the player's name and their health after a round using array access notation and dot notation for the object.
+        console.log(fighters[0].name + ": " + fighters[0].health + " | " + fighters[1].name + ": " + fighters[1].health);
 
-            //checks for the victor of the fight by running the winnerCheck() function at the end of each round and stores the value that was output by the function into a variable
-            var result = winnerCheck();
-			//reports to the console the results of the round in the fight or the fight itself depending on the value of the variable.
-            console.log(result);
-			//if the result of the round is that neither player won -
-            if (result==="no winner")
-            {
-				//the round is incremented by 1.
-                round++;
-				//the user is alerted of both players' healths at the end of the round using array access notation
-                alert(fighter1[0]+":"+fighter1[2]+"  *ROUND "+round+" OVER"+"*  "+fighter2[0]+":"+fighter2[2]);
-			//otherwise if there is a result other than "no winner" -  
-            } else{
-				//alert the user of the result of the round or fight
-                alert(result);
-				//break out of the function if the fight is over before 10 rounds are reached
-                break;
-            };
-
-          };
-    };
-
+        //checks for the victor of the fight by running the winnerCheck() function at the end of each round and stores the value that was output by the function into a variable
+        var result = winnerCheck();
+        
+        //reports to the console the results of the round in the fight or the fight itself depending on the value of the variable.
+        console.log("Verdict = " + result);
+            
+        //once the fight starts, the HTML on the page prompting to start the fight changes to a title announcing the results of the round and overall fight.
+        round_txt.innerHTML = "ROUND #" + round + " Results:";
+        
+        //the round is incremented by 1.
+        round++;
+        
+        //if the result of the round is that neither player won -
+        if (result === "no winner") {    
+                //the user is alerted of both players' healths at the end of the round by having the new values that have been stored be displayed dynamically on the page.
+                fighter1_txt.innerHTML = "<b>" + fighters[0].name + "</b>: <span style = 'color: #558151; text-shadow: 2px 0px #ccc;'>" + fighters[0].health + "</span>";
+                fighter2_txt.innerHTML = "<b>" + fighters[1].name + "</b>: <span style = 'color: #558151; text-shadow: 2px 0px #ccc;'>" + fighters[1].health + "</span>";
+                //otherwise if there is a result other than "no winner" 
+            } else {
+            //alert the user through the page of the result of the fight.
+                fighter1_txt.innerHTML = "<b><span style = 'color: #558151; text-shadow: 2px 0px #ccc;'>" + result + "</span></b>";
+                fighter2_txt.innerHTML = "";
+				
+                //this disables the button/event after the fight is over.
+                button.removeEventListener("click", fight, false);
+                
+                //this changes the text in the fight button to show the fight is done.
+                document.querySelector('.buttonstyle').innerHTML = "DONE!";
+            }
+    }
+    
 //function that checks for the winner of the fight depending on the player's health.
     function winnerCheck(){
 		//result is defaulted to "no winner"
