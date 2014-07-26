@@ -33,7 +33,13 @@
 
     //sets and initializes value for the 1st round
     var round = 1;
+    
+    //initializing DOM innerHTML for the top of the HTML page. This is the default text.
+    round_txt.innerHTML = "Click the FIGHT BUTTON to Start!";
+    fighter1_txt.innerHTML = "<b>" + fighters[0].name + "</b>: <span style = 'color: #558151; text-shadow: 2px 0px #ccc;'> " + fighters[0].health + "</span>";
+    fighter2_txt.innerHTML = "<b>" + fighters[1].name + "</b>: <span style = 'color: #558151; text-shadow: 2px 0px #ccc;'>" + fighters[1].health + "</span>";
 
+    
     //fight function which determines how much damage each player receives during a round and reduces their healths accordingly.
     function fight(){
         //alerts to the user the name and health of player 1 and 2 at the beginning of the fight using array access notation.
