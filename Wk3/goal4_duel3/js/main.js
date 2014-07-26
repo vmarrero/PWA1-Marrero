@@ -117,6 +117,7 @@
     }
 
     /*******  The program gets started below where it is invoked *******/
-    fight();
-
+    //setting up a click event for the button to run the fight function
+    button.addEventListener("click", fight, false);
+    
 })();
