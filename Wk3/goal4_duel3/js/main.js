@@ -94,25 +94,27 @@
             }
     }
     
-//function that checks for the winner of the fight depending on the player's health.
-    function winnerCheck(){
-		//result is defaulted to "no winner"
-        var result="no winner";
-		//if both players' healths are less than 1 or equal to 0 or less, then both players die at the end of the round.
-        if (fighter1[2]<1 && fighter2[2]<1)
-        {
-            result = "You Both Die";
+    //function that checks for the winner of the fight depending on the player's health.
+    function winnerCheck() {
+        
+	   //result is defaulted to "no winner"
+        var result = "no winner";
+        
+        //if both players' healths are less than 1 or equal to 0 or less, then both players die at the end of the round.
+        if (fighters[0].health < 1 && fighters[1].health < 1) {
+            result = "Both Fighters Die!";
+            
 		//otherwise if player 1's health is less than 1 or equal to 0 or less, then player 2 is declared the winner of the fight.
-        } else if(fighter1[2]<1){
-            result =fighter2[0]+" WINS!!!"
+        } else if (fighters[0].health < 1) {
+            result = fighters[1].name + " WINS!!!";
+            
 		//otherwise if player 2's health is less than 1 or equal to 0 or less, then player 1 is declared the winner of the fight.
-        } else if (fighter2[2]<1)
-        {
-            result = fighter1[0]+" WINS!!!"
-        };
+        } else if (fighters[1].health < 1) {
+            result = fighters[0].name + " WINS!!!";
+        }
 		//return the value of the result variable outside of the function.
-       return result;
-    };
+        return result;
+    }
 
     /*******  The program gets started below where it is invoked *******/
     fight();
