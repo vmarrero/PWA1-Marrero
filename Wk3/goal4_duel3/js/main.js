@@ -8,16 +8,31 @@
 ********/
 
 // self-executing function for superhero fight calculator and results reporting
-(function(){
-	//reports "FIGHT!!!" to the console.
-    console.log("FIGHT!!!");
+(function () {
+
+    //reports "FIGHT!!!" to the console.
+    console.log("|********** FIGHT!!! **********|");
+
+    //this is setting and defining the DOM pieces that will be manipulated.
+    var fighter1_txt = document.querySelector("#link").querySelector("p");
+    var fighter2_txt = document.querySelector("#zelda").querySelector("p");
+    var round_txt = document.querySelector("h5");
+    var button = document.getElementById("fight_btn");
     
-    //these arrays store the fighters' names, the maximum damages they cause per round and their healths.
-    var fighter1 = ['Spiderman', 20, 100];
-    var fighter2 = ['Batman', 20, 100];
+    //the fighters array stores objects that contain keys relating to individual fighter's names, the maximum damages they cause per round and their healths.
+    var fighters = [{
+            name: 'Link', 
+            damage: 20, 
+            health: 100
+        },
+        {
+            name: 'Zelda', 
+            damage: 20, 
+            health: 100
+        }]; 
 
     //sets and initializes value for the 1st round
-    var round=0;
+    var round = 1;
 
     //fight function which determines how much damage each player receives during a round and reduces their healths accordingly.
     function fight(){
